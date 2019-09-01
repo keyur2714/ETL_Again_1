@@ -1,0 +1,57 @@
+
+	
+	1. Download NODE JS
+	2. Install NODE JS
+	3. check installation is done or note.
+	- open CMD - 
+		> node -v
+	- if it's installed it will display node version
+	- it should be > 10
+	
+	-node JS installed it will install NPM
+		>npm -v
+	
+	4. install Angular CLI
+		>npm install -g @angular/cli
+	- it will take some time
+	- after installed
+	- check with below commands
+		>ng version
+	- it should be 1.8
+
+	----------------------------------------
+	Development Editor
+	
+	1. download  and install VS Code.
+	
+	Download GIT
+	
+	1. download GIT
+	
+	open CMD and type
+		>git
+		- it should display set of commands
+	
+	2. 
+
+	goto E:
+	
+git clone https://github.com/keyur2714/ETL_Again_1.git
+
+	-- it will clone ETL_Again_1.git repository
+		
+	E: >
+	ETL_Again_1
+	cd ETL_Again_1
+	>dir
+	
+	cd E:\ETL_Again_1
+	-> git pull
+	
+	E:
+		create one personal folder
+		ETL_Angular
+	->
+	
+	
+	
