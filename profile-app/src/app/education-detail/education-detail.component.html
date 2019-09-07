@@ -1,0 +1,23 @@
+<div class="card-container">
+    <div class="card">
+        <div class="card-header bg-danger">
+            Education Details 
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered bg-secondary text-white">
+                <tr>
+                    <th>SrNo.</th>
+                    <th>Year</th>
+                    <th>Degree</th>
+                    <th>Per</th>
+                </tr>
+                <tr *ngFor="let education of educationList;let i=index">
+                    <td>{{i + 1}}</td>
+                    <td>{{education.year}}</td>
+                    <td>{{education.degree}}</td>
+                    <td>{{education.per}}</td>
+                </tr>
+            </table>    
+        </div>
+    </div>
+</div>
