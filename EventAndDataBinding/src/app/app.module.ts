@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { StringOperationComponent } from './string-operation/string-operation.component';
 import { NumericOperationComponent } from './numeric-operation/numeric-operation.component';
 import { MessageComponent } from './message/message.component';
+import { VottingComponent } from './votting/votting.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StringOperationComponent,
     NumericOperationComponent,
-    MessageComponent
+    MessageComponent,
+    VottingComponent
   ],
   imports: [
     BrowserModule,
