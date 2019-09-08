@@ -1,0 +1,25 @@
+<div class="card-container">
+    <div class="card">
+        <div class="card-header bg-warning">
+            String Operations
+        </div>
+        <div class="card-body">
+            <div class="row form-group">
+                <div class="col-sm-4">Enter Any String: </div>
+                <div class="col-sm-4"><input type=text name=str class="form-control" #str (blur)="setFlag(str.value)" /></div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-8">
+                    <button class="btn btn-info m-1" (click)="toUpper(str.value)" [disabled]="flag">To Upper</button>
+                    <button class="btn btn-success m-1" (click)="toLower(str.value)" [disabled]="flag">To Lower</button>
+                    <button class="btn btn-success m-1" (click)="toReverse(str.value)" [disabled]="flag">To Reverse</button>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-6">
+                    Result is : {{result}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="card-container">
+        <div class="card">
+            <div class="card-header bg-warning">
+                Numeric Operations <!--{{number1}} -->
+            </div>
+            <div class="card-body">
+                <div class="row form-group">
+                    <div class="col-sm-4">Enter First Number: </div>
+                    <div class="col-sm-4"><input type=number name=number1 class="form-control" [(ngModel)]="number1" /></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4">Enter Second Number: </div>
+                    <div class="col-sm-4"><input type=number name=number1 class="form-control" [(ngModel)]="number2" /></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-8">
+                        <button class="btn btn-info m-1" (click)="add()" >+</button>
+                        <button class="btn btn-success m-1" (click)="sub()" >-</button>
+                        <button class="btn btn-success m-1" (click)="mul()" >*</button>
+                        <button class="btn btn-success m-1" (click)="div()" >/</button>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-6">
+                        Result is : {{result}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
