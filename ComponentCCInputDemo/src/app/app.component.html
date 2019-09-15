@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-message [messageType]="'warning'"></app-message>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-message [message]="'Hello how are you?'" [messageType]="'info'"></app-message>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-message *ngFor="let msg of messageList;let i=index" [message]="msg" [messageType]="i % 2 ===0 ? 'success' : 'danger'"></app-message>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-info">
+          Department List
+        </div>
+        <div class="card-body">
+          <app-dept-list></app-dept-list>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-info">
+          Student List
+        </div>
+        <div class="card-body">
+          <app-student-list></app-student-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
