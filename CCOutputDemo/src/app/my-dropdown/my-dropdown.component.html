@@ -1,0 +1,7 @@
+<select name="{{name}}" [(ngModel)]="selectedValue" class="form-control" (change)="setSelectedValue()">
+    <option [value]="-1">{{label}}</option>
+    <option *ngFor="let data of dataList" [ngValue]="data">
+        {{data.desc}}
+    </option>
+</select>
+

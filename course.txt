@@ -9,7 +9,7 @@
 	Flow of Execution with angular.json --- Done
 	create component --- Done
 	play with component --- Done
-	inbuilt dirctive / ngIf / ngFor / ngClass --- Done
+	inbuilt directive / ngIf / ngFor / ngClass --- Done
 	create component without html --- Done
 	create model class --- Done 
 	create Array of string/numbers --- Done

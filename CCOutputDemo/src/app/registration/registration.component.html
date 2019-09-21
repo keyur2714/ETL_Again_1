@@ -1,0 +1,45 @@
+<div class="card-container">
+    <div class="card">
+        <div class="card-header">
+            Registration
+        </div>
+        <div class="card-body">
+            <div class="row form-group">
+                <div class="col">Name : </div>
+                <div class="col"><input type=text name=name [(ngModel)]="registration.name" class="form-control"/></div>
+            </div>
+            <div class="row form-group">
+                <div class="col">State : </div>
+                <div class="col">
+                    <app-my-dropdown
+                        [dataList]="stateList"
+                        [label]="'Select State'"
+                        [selectedValue]="defaultState"
+                        [name]="'state'"
+                        (getSelectedValue)="setState($event)"
+                    >
+                    </app-my-dropdown>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col">City : </div>
+                <div class="col">
+                    <app-my-dropdown
+                        [dataList]="cityList"
+                        [label]="'Select City'"
+                        [selectedValue]="defaultCity"
+                        [name]="'city'"
+                        (getSelectedValue)="setCity($event)"
+                    >
+                    </app-my-dropdown>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-4">
+                    <button (click)="save()">Register</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
