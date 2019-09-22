@@ -2,8 +2,14 @@
     [dataList]="studentList"
     [columnList]="columnList"
     [headerList]="headerList"
+    (getSelectedRow)="getRow($event)"
 >
 </app-my-table>
+<table>
+    <tr>
+        <td>{{selectedStudent | json}}</td>
+    </tr>
+</table>
 <!-- <table class="table table-bordered">
     <thead>
         <tr>

@@ -6,12 +6,18 @@
   </div>
   <div class="row">
     <div class="col">
-      <app-message [messageType]="'warning'"></app-message>
+      <app-message [messageType]="'warning'" (getMessage)="setMessage($event)"></app-message>
+    </div>    
+    <div class="col alert alert-info">
+      {{newMessage}}
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <app-message [message]="'Hello how are you?'" [messageType]="'info'"></app-message>
+      <app-message [message]="'Hello how are you?'" [messageType]="'info'" (getMessage)="setMessage($event)"></app-message>
+    </div>
+    <div class="col alert alert-info">
+      {{newMessage}}
     </div>
   </div>
   <div class="row">

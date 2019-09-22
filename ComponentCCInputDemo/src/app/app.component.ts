@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Component Communications';
 
+  newMessage : string = '';
+
   messageList : string [] = [
     "Hi",
     "Hello",
@@ -16,4 +18,9 @@ export class AppComponent {
     "Good Afternoon",
     "Good Evening"
   ];
+
+  setMessage(event) : void {    
+    this.newMessage = event;
+    console.log(this.newMessage);
+  }
 }

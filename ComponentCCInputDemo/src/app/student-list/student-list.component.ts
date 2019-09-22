@@ -10,6 +10,8 @@ export class StudentListComponent implements OnInit {
 
   studentList : Student[] = [];
 
+  selectedStudent : Student;
+
   columnList : string[] = ["rollNo","name"];
 
   headerList : string[] = ["Roll #","Name"];
@@ -38,4 +40,8 @@ export class StudentListComponent implements OnInit {
     this.studentList.push(student3);
   }
 
+  getRow(event) : void {
+    console.log(event);
+    this.selectedStudent = event;
+  }
 }

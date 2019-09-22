@@ -10,6 +10,8 @@ export class DeptListComponent implements OnInit {
 
   deptList : Department[] = [];
 
+  selectedDepartment : Department = new Department();
+
   columnList : string[] = ["deptId","deptName","managerName"];
 
   headerList : string[] = ["Dept #","Dept Name","Manager"];
@@ -26,4 +28,8 @@ export class DeptListComponent implements OnInit {
     this.deptList.push(dept4);
   }
 
+  getRow(event) : void {
+    console.log(event);
+    this.selectedDepartment = event;
+  }
 }

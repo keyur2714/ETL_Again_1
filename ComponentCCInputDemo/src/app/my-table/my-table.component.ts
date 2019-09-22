@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-my-table',
@@ -14,9 +14,17 @@ export class MyTableComponent implements OnInit {
   @Input()
   columnList : string[] =[];
 
+  selectedRow : any;
+
+  @Output() getSelectedRow = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  setCurrentRow(data) : void {
+    this.selectedRow = data;
+    this.getSelectedRow.emit(this.selectedRow);
+  }
 }
