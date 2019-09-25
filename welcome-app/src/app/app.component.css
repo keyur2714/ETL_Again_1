@@ -1,0 +1,13 @@
+h1{
+    border: 5px solid red;
+    color: orange;
+    background: black;
+}
+h2{
+    border: 5px solid black;
+    color: blue;
+    background: white;
+}
+p{
+    color: indianred;
+}
