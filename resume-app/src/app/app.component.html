@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col">      
+    </div>
+    <div class="col">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <app-personal-detail
+        [personal-info]="person"
+        color="text-warning"
+        background="bg-info"
+      >
+      </app-personal-detail>
+    </div>
+    <div class="col-sm-6">
+        <app-personal-detail
+          [personal-info]="person1"
+          color="text-info"
+          background="bg-dark"
+        >
+        </app-personal-detail>
+      </div>
+  </div>  
+  <div class="row">
+    <div class="col">
+        <app-personal-detail *ngFor="let p of personList;let idx=index"
+          [personal-info]="p"
+          [color]="idx % 2 == 0 ? 'text-danger' : 'text-warning'"
+          background="bg-secondary"
+        >
+        </app-personal-detail>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <ul>
+        <li *ngFor="let per of personList;let i=index;">
+          {{per.age}} , {{per.dob}} , {{i}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
