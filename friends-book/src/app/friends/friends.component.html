@@ -1,0 +1,47 @@
+<div class="card-container">
+    <div class="card">
+        <div class="card-header">
+            Manage Friends
+        </div>
+        <div class="card-body">
+            <div class="row" *ngIf="errorMessage !== ''">
+                <div class="col alert alert-danger">
+                    {{errorMessage}}
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col">Name : </div>
+                <!-- <div class="col"><input type=text name=name class="form-control" #name /></div> -->
+                <div class="col"><input type=text name=name class="form-control" [(ngModel)]="friendName" /></div>
+                <!-- {{friendName}} -->
+                <!-- <div class="col"><button class="btn btn-info" (click)="add(name.value)">Add</button></div> -->
+                <div class="col">
+                    <button class="btn btn-info" (click)="add()" *ngIf="! isUpdate">Add</button>
+                    <button class="btn btn-info" (click)="update()" *ngIf="isUpdate">Update</button>                    
+                </div>
+            </div>            
+            <div class="row form-group">
+                <div class="col">
+                        <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Action</th>
+                                    </tr>                    
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let friendName of friendsList;let i=index;">
+                                        <td>{{friendName}}</td>
+                                        <td>
+                                            <button class="btn btn-success m-1" (click)="edit(i)">Edit</button>
+                                            <button class="btn btn-danger m-1" (click)="delete(i)">Delete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>            
+                        </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

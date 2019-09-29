@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from './personal-detail/person.model';
+import { Skill } from './skill.model';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ export class AppComponent implements OnInit{
   title = 'resume-app';
 
   personList : Person[] = [];
+  skillSets : Skill[] = [];
 
   person : Person = new Person();
   person1 : Person = new Person();
@@ -41,6 +43,20 @@ export class AppComponent implements OnInit{
     this.personList.push(this.person);
     this.personList.push(this.person1);
     this.personList.push(person3);
+
+
+    let skill1 = new Skill();
+    skill1.skillType = 'Database';
+    skill1.skillSets = ['MySql','Oracle','Sql Server'];
+
+    let skill2 = new Skill('Language');
+    skill2.skillSets = ['C','C++','Java','Java Script','Angular'];
+
+    let skill3 = new Skill('Operating System',['Windows','Linux','Ubantu']);
+
+    this.skillSets.push(skill1);
+    this.skillSets.push(skill2);
+    this.skillSets.push(skill3);    
   }
 
 }
