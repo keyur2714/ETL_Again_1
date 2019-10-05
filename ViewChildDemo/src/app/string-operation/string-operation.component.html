@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header bg-dark text-info">
+        String Operations
+    </div>
+    <div class="card-body">
+        <div class="row form-group">
+            <div class="col-sm-4">
+                    Enter Any String : 
+            </div>
+            <div class="col-sm-4">
+                <input type=text name=str #str class="form-control" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col">
+                <!-- <button class="btn btn-info m-1" (click)="upper(str.value)">UpperCase</button>
+                <button class="btn btn-success m-1" (click)="lower(str.value)">LowerCase</button>
+                <button class="btn btn-danger m-1" (click)="reverse(str.value)">Reverse</button> -->
+                <button class="btn btn-info m-1" (click)="upper()">UpperCase</button>
+                <button class="btn btn-success m-1" (click)="lower()">LowerCase</button>
+                <button class="btn btn-danger m-1" (click)="reverse()">Reverse</button>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col"><ng-content></ng-content> {{result}}</div>
+        </div>
+        <div class="row form-group">
+            <div class="col" #res></div>
+        </div>
+    </div>
+</div>
