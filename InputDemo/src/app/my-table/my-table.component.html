@@ -1,0 +1,21 @@
+<table class="table table-bordered table-striped table-hover bg-{{backGroundColor}} text-{{color}}">
+    <thead>
+        <tr>
+            <th *ngFor="let headerName of headerList">{{headerName}}</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of dataList">
+            <td *ngFor="let fieldName of fieldNameList">
+                <div *ngIf="fieldName === 'code'">                        
+                        <img src="../../assets/images/items/{{data[fieldName]}}.jpg" width="50px" height="50px" />
+                </div>
+                <div *ngIf="fieldName !== 'code'">
+                        {{data[fieldName]}}            
+                </div>                
+            </td>            
+        </tr>
+    </tbody>
+</table>
+    
+    
