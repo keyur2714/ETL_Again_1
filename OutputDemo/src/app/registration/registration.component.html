@@ -1,0 +1,28 @@
+<div class="row form-group">
+    <div class="col-sm-4">
+        Name : 
+    </div>
+    <div class="col">
+        <input type="text" name="name" class="form-control" [(ngModel)]="registration.name">
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-sm-4">
+        City : 
+    </div>
+    <div class="col">
+        <app-my-dropdown
+            [name]="'city'"
+            [placeHolder]="'Select City'"
+            [dataList]="cityList"            
+            [selectedValue]="cityList[1]"
+            (getValue)="setCity($event)"
+        >            
+        </app-my-dropdown>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <button class="btn btn-info" (click)="save()">Save</button>
+    </div>
+</div>
