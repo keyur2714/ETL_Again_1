@@ -1,0 +1,61 @@
+<form [formGroup]="itemEntry" (ngSubmit)="save()">
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Item Id : 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" [formControlName]="'id'" class="form-control">
+        </div>
+        <div class="col-sm-4" *ngIf="itemEntry.get('id').touched && itemEntry.get('id').invalid">
+            Item Id is Required Field.
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Item Code : 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" [formControlName]="'code'" class="form-control">
+        </div>
+        <div class="col-sm-4" *ngIf="itemEntry.get('code').touched && itemEntry.get('code').invalid">
+                Item Code is Required Field.
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Item Desc : 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" [formControlName]="'desc'" class="form-control">
+        </div>
+        <div class="col-sm-4" *ngIf="itemEntry.get('desc').touched && itemEntry.get('desc').invalid">
+            <div *ngIf="itemEntry.get('desc').errors['required']">
+                    Item Desc is Required Field.
+            </div>
+            <div *ngIf="itemEntry.get('desc').errors['minlength']">
+                    Item Desc is Min 5 Char.
+            </div>    
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Item Price : 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" [formControlName]="'price'" class="form-control">
+        </div>
+        <div class="col-sm-4" *ngIf="itemEntry.get('price').touched && itemEntry.get('price').invalid">
+                <div *ngIf="itemEntry.get('price').errors['required']">
+                        Item Price is Required Field.
+                </div>
+                <div *ngIf="itemEntry.get('price').errors['pattern']">
+                        Invalid Price.
+                </div>    
+            </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-info" [disabled]="itemEntry.invalid">Save</button>
+        </div>
+    </div>
+</form>
