@@ -4,7 +4,7 @@
             <sup>*</sup>Roll No: 
         </div>
         <div class="col-sm-4">
-            <input type="text" name="rollNo" class="form-control" ngModel required #rollNo=ngModel>
+            <input type="text" name="rollNo" class="form-control" [(ngModel)]="newStudent.rollNo" required #rollNo=ngModel>
         </div>
         <div class="col-sm-4" *ngIf="rollNo.invalid && rollNo.touched" [ngClass]="'errorClass'">
             Roll Number is Required field.
@@ -15,7 +15,7 @@
             <sup>*</sup>Name:
         </div>
         <div class="col-sm-4">
-            <input type="text" name="name" class="form-control" ngModel required minlength="3" #name=ngModel>
+            <input type="text" name="name" class="form-control" [(ngModel)]="newStudent.name" required minlength="3" #name=ngModel>
         </div>
         <div class="col-sm-4" *ngIf="name.invalid && name.touched" [ngClass]="'errorClass'">
             <div *ngIf="name.errors['required']">
@@ -31,7 +31,7 @@
             <sup>*</sup>Mobile No:
         </div>
         <div class="col-sm-4">
-            <input type="text" name="mobileNo" class="form-control" ngModel required pattern="^[0-9]+$" minlength="10" maxlength="10" #mobileNo="ngModel">
+            <input type="text" name="mobileNo" class="form-control" [(ngModel)]="newStudent.mobileNo" required pattern="^[0-9]+$" minlength="10" maxlength="10" #mobileNo="ngModel">
         </div>
         <div class="col-sm-4" *ngIf="mobileNo.invalid && mobileNo.touched" [ngClass]="'errorClass'">
             <div *ngIf="mobileNo.errors['required']">
@@ -45,17 +45,77 @@
             </div>
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row form-group">        
         <div class="col-sm-4">
             <sup>*</sup>Email:
         </div>
         <div class="col-sm-4">
-            <input type="text" name="email" class="form-control" ngModel required email>
+            <input type="text" name="email" class="form-control" [(ngModel)]="newStudent.email" required email>
         </div>
     </div>
     <div class="row form-group">
         <div class="col-sm-4">
-            <button class="btn btn-info" [disabled]="false">Save</button>
+            <sup>*</sup>Course:
+        </div>
+        <div class="col-sm-4">
+            <select name="course" class="form-control" [(ngModel)]="newStudent.course">
+                <option value="-1">-:Select Course:-</option>
+                <option *ngFor="let course of courseList" [ngValue]="course">
+                    {{course.courseName}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Gender:
+        </div>
+        <div class="col-sm-6">
+            <input type="radio" name="gender" class="radio-inline" ngModel value="M" [(ngModel)]="newStudent.gender">Male
+            <input type="radio" name="gender" class="radio-inline" ngModel value="F" [(ngModel)]="newStudent.gender">Female
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            <button class="btn btn-info m-1" [disabled]="frm.invalid">Save</button>
+            <button type="buton" class="btn btn-secondary m-1" (click)="reset(frm)">Reset</button>
         </div>        
     </div>
 </form>
+<div class="card" *ngIf="isSubmittedAndValid">
+    <div class="card-header bg-warning">
+        Student Details
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered bg-dark text-info">
+            <tr>
+                <th>Roll No:</th>                
+                <td>{{newStudent.rollNo}}</td>
+            </tr>
+            <tr>
+                <th>Name/th>                
+                <td>{{newStudent.name}}</td>
+            </tr>
+            <tr>
+                <th>Mobile No:</th>                
+                <td>{{newStudent.mobileNo}}</td>
+            </tr>
+            <tr>
+                <th>Email:</th>                
+                <td>{{newStudent.email}}</td>
+            </tr>
+            <tr>
+                <th>Gender:</th>                
+                <td>{{newStudent.gender === 'M' ? 'Male' : 'Female'}}</td>
+            </tr>
+            <tr>
+                <th>Course Name</th>
+                <td>{{newStudent.course.courseName}}</td>
+            </tr>
+            <tr>
+                <th>Course Fees</th>
+                <td>{{newStudent.course.fees}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
