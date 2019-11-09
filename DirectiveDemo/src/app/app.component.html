@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h1 appStyle color="red" #e1>Hello Radhe Krishna...</h1>      
+    </div>
+    <div class="col">
+        <p appStyle [fontSize]="'35px'" #e2>How Are you?</p>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button (click)="changeColor()" appStyle>Change Color</button>
+    </div>
+  </div>
+</div>

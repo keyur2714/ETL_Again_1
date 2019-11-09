@@ -5,9 +5,9 @@
         </div>
         <div class="col-sm-4">
             <input type="text" name="rollNo" class="form-control" [(ngModel)]="newStudent.rollNo" required #rollNo=ngModel>
-        </div>
+        </div>        
         <div class="col-sm-4" *ngIf="rollNo.invalid && rollNo.touched" [ngClass]="'errorClass'">
-            Roll Number is Required field.
+            Roll Number is Required field. 
         </div>
     </div>
     <div class="row form-group">
