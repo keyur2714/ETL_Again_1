@@ -4,17 +4,24 @@
       <h1>{{title}}</h1>
     </div>
   </div>
-  <div class="row">
+  <div class="row" *appMyIf="1 === 1;param1:'hi'">
     <div class="col">
-      <h1 appStyle color="red" #e1>Hello Radhe Krishna...</h1>      
+      <h1 appStyle color="red" fontSize="25px" #e1>Hello Radhe Krishna...</h1>      
     </div>
     <div class="col">
-        <p appStyle [fontSize]="'35px'" #e2>How Are you?</p>
+        <p appStyle [fontSize]="'35px'" #e2>
+          <span #s> How Are you? </span>
+        </p>
       </div>
   </div>
   <div class="row">
     <div class="col">
-      <button (click)="changeColor()" appStyle>Change Color</button>
+      <button (click)="changeColor()" appStyle class="btn btn-info">Change Color</button>
+    </div>
+  </div>
+  <div class="row" *appMyFor="5">
+    <div class="col">
+      <p>Keyur</p>
     </div>
   </div>
 </div>
