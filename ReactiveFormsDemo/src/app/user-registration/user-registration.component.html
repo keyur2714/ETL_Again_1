@@ -1,0 +1,52 @@
+<form [formGroup]="userRegistration" (ngSubmit)="save()">
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Username : 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" [formControlName]="'userName'" class="form-control">
+        </div>        
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Password : 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" [formControlName]="'password'" class="form-control">
+        </div>        
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Name : 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" [formControlName]="'name'" class="form-control">
+        </div>        
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Mobile No : 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" [formControlName]="'mobileNo'" class="form-control">
+        </div>        
+    </div>
+    <div formArrayName="hobbies">
+        <div class="row form-group" *ngFor="let control of userRegistration.get('hobbies').controls;let i=index">
+            <div class="col-sm-4">
+                Hobby : 
+            </div>
+            <div class="col-sm-4">
+                <input type="text" [formControlName]="i" class="form-control">
+            </div>        
+            <div class="col-sm-4">
+                <button class="btn btn-info" (click)="addMore()">Add Mode</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-info" [disabled]="userRegistration.invalid">Save</button>
+        </div>
+    </div>
+</form>
