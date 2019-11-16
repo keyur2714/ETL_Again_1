@@ -34,7 +34,7 @@
     <div formArrayName="hobbies">
         <div class="row form-group" *ngFor="let control of userRegistration.get('hobbies').controls;let i=index">
             <div class="col-sm-4">
-                Hobby : 
+                Hobby-{{i+1}}: 
             </div>
             <div class="col-sm-4">
                 <input type="text" [formControlName]="i" class="form-control">
