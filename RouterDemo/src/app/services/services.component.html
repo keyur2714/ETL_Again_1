@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-sm-4">
             <ul>
-                <li><a [routerLink]="'education'" [routerLinkActive]="'active'">Educations</a></li>
+                <li><a [routerLink]="['education',17,'CBSE']" [routerLinkActive]="'active'">Educations</a></li>
                 <li><button class="btn btn-info" (click)="education()">Education</button></li>
-                <li><a [routerLink]="'software'" routerLinkActive="active">Software</a></li>
+                <li><a [routerLink]="['software']" [queryParams]="{name: 'java',price:'100$'}" routerLinkActive="active">Software</a></li>
             </ul>
     </div>
     <div class="col-sm-8">

@@ -14,7 +14,7 @@ export class ServicesComponent implements OnInit {
   }
 
   education() : void {
-    this.router.navigate(['services/education']);
+    this.router.navigate(['services/education',27,'ICSC']);
   }
 
 }

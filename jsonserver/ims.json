@@ -1,0 +1,16 @@
+{
+  "inquiries": [
+    {
+      "id": 1,
+      "name": "keyur",
+      "email": "keyurjava27@gmail.com",
+      "mobileNo": "7387029671",
+      "course": {
+        "id": 1,
+        "courseCode": "ANG",
+        "courseName": "Angular",
+        "fees": 12000
+      }
+    }
+  ]
+}

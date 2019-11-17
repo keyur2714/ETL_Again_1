@@ -14,7 +14,7 @@ const routes: Routes = [
   {path : 'about-us' , component : AboutUsComponent},
   {path : 'services' , component : ServicesComponent,
    children : [
-     {path : 'education' , component : EducationComponent},
+     {path : 'education/:id/:type' , component : EducationComponent},
      {path : 'software' , component : SoftwareComponent}
    ]
   }
