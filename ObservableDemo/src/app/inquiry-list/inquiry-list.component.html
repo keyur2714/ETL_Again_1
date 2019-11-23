@@ -1,0 +1,20 @@
+<table class="table table-bordered bg-dark text-info">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile No</th>
+        <th>Course Name</th>
+        <th>Fees</th>
+    </tr>
+    <tr *ngFor="let inquiry of inquiryList">
+        <td>
+            <a [routerLink]="['/inquiries',inquiry.id]">{{inquiry.id}}</a>
+        </td>
+        <td>{{inquiry.name}}</td>
+        <td>{{inquiry.email}}</td>
+        <td>{{inquiry.mobileNo}}</td>
+        <td>{{inquiry.course.courseName}}</td>
+        <td>{{inquiry.course.fees}}</td>
+    </tr>
+</table>

@@ -11,6 +11,18 @@
         "courseName": "Angular",
         "fees": 12000
       }
+    },
+	{
+      "id": 2,
+      "name": "denish",
+      "email": "denishjava26@gmail.com",
+      "mobileNo": "73870296121",
+      "course": {
+        "id": 2,
+        "courseCode": "JAVA",
+        "courseName": "Java",
+        "fees": 10000
+      }
     }
   ]
 }
