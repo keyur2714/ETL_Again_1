@@ -1,3 +1,4 @@
+<button class="btn btn-info" [routerLink]="['/inquiryEntry']">Add</button>
 <table class="table table-bordered bg-dark text-info">
     <tr>
         <th>Id</th>
@@ -6,6 +7,7 @@
         <th>Mobile No</th>
         <th>Course Name</th>
         <th>Fees</th>
+        <th>Action</th>
     </tr>
     <tr *ngFor="let inquiry of inquiryList">
         <td>
@@ -16,5 +18,9 @@
         <td>{{inquiry.mobileNo}}</td>
         <td>{{inquiry.course.courseName}}</td>
         <td>{{inquiry.course.fees}}</td>
+        <td>
+            <button class="btn btn-success m-1" (click)="edit(inquiry.id)">Edit</button>
+            <button class="btn btn-danger m-1" (click)="delete(inquiry.id)">Delete</button>
+        </td>
     </tr>
 </table>

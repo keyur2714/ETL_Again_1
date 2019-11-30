@@ -32,4 +32,13 @@ export class InquiryService {
       })
     )
   }
+
+  saveInquiry(inquiry : Inquiry) : Observable<Inquiry>{
+    return this.httpClient.post<Inquiry>(this.appUrl,inquiry);    
+  }
+
+  updateInquiry(inquiry : Inquiry) : Observable<Inquiry>{
+    return this.httpClient.put<Inquiry>(this.appUrl+"/"+inquiry.id,inquiry);    
+  }
 }
+

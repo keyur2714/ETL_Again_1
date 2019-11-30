@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoggingService } from '../logging.service';
 import { InquiryService } from './inquiry.service';
 import { Inquiry } from './inquiry.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inquiry-list',
@@ -13,7 +14,7 @@ export class InquiryListComponent implements OnInit {
 
   inquiryList : Inquiry[] = [];
 
-  constructor(private loggingService : LoggingService,private inquiryService : InquiryService) { 
+  constructor(private loggingService : LoggingService,private inquiryService : InquiryService,private router:Router) { 
     this.loggingService.logInfo("Hi...");
   }
 
@@ -32,4 +33,7 @@ export class InquiryListComponent implements OnInit {
     )
   } 
 
+  edit(id : number) : void {
+    this.router.navigate(['inquiryEntry',id]);
+  }
 }

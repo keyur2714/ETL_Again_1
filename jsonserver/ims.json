@@ -12,16 +12,28 @@
         "fees": 12000
       }
     },
-	{
+    {
       "id": 2,
       "name": "denish",
       "email": "denishjava26@gmail.com",
-      "mobileNo": "73870296121",
+      "mobileNo": "73870296321",
       "course": {
-        "id": 2,
-        "courseCode": "JAVA",
-        "courseName": "Java",
-        "fees": 10000
+        "id": 1,
+        "courseCode": "ANG",
+        "courseName": "Angular",
+        "fees": 12000
+      }
+    },
+    {
+      "id": "3",
+      "name": "vipul",
+      "email": "vipul@gmail.com",
+      "mobileNo": "9898121233",
+      "course": {
+        "id": 3,
+        "courseCode": "BIGDATA",
+        "courseName": "Hadoop Dev",
+        "fees": 15000
       }
     }
   ]
