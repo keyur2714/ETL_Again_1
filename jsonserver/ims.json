@@ -35,6 +35,18 @@
         "courseName": "Hadoop Dev",
         "fees": 15000
       }
+    },
+    {
+      "id": "4",
+      "name": "Ashvini Thakor",
+      "email": "keyurjava27@gmail.com",
+      "mobileNo": "8600712124",
+      "course": {
+        "id": 1,
+        "courseCode": "ANG",
+        "courseName": "Angular",
+        "fees": 12000
+      }
     }
   ]
 }

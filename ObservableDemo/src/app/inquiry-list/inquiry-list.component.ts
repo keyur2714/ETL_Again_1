@@ -36,4 +36,16 @@ export class InquiryListComponent implements OnInit {
   edit(id : number) : void {
     this.router.navigate(['inquiryEntry',id]);
   }
+
+  delete(id : number) : void {
+    let confirmMsg = confirm("Are you sure want to delete?");
+    if(confirmMsg){
+      this.inquiryService.deleteInquiryById(id).subscribe(
+        (data)=>{
+          alert("Inquiry Deleted Successfully.");
+          this.getInquiryList();
+        }
+      )
+    }
+  }
 }

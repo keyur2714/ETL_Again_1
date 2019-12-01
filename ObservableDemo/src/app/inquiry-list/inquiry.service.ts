@@ -25,12 +25,13 @@ export class InquiryService {
   }
 
   getInquiryById(id : number) : Observable<Inquiry>{
-    return this.httpClient.get<Inquiry>(this.appUrl+"/"+id).pipe(      
-      map(data=>{        
-          data.course.fees = data.course.fees + (data.course.fees * 5 /100);        
-          return data;
-      })
-    )
+    return this.httpClient.get<Inquiry>(this.appUrl+"/"+id);
+    // return this.httpClient.get<Inquiry>(this.appUrl+"/"+id).pipe(      
+    //   map(data=>{        
+    //       data.course.fees = data.course.fees + (data.course.fees * 5 /100);        
+    //       return data;
+    //   })
+    // )
   }
 
   saveInquiry(inquiry : Inquiry) : Observable<Inquiry>{
@@ -39,6 +40,10 @@ export class InquiryService {
 
   updateInquiry(inquiry : Inquiry) : Observable<Inquiry>{
     return this.httpClient.put<Inquiry>(this.appUrl+"/"+inquiry.id,inquiry);    
+  }
+
+  deleteInquiryById(id : number) : Observable<any>{
+    return this.httpClient.delete<any>(this.appUrl+"/"+id);
   }
 }
 

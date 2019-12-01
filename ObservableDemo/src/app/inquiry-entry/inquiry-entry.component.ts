@@ -12,6 +12,7 @@ import { Course } from '../inquiry-list/course.model';
 })
 export class InquiryEntryComponent implements OnInit {
 
+  isLoaded : boolean = false;
   inqiry : Inquiry = new Inquiry();
   inquiryEntryForm : FormGroup;
   editId : number = 0;
@@ -21,12 +22,6 @@ export class InquiryEntryComponent implements OnInit {
       "courseCode": "ANG",
       "courseName": "Angular",
       "fees": 12000
-    },
-    {
-      "id": 2,
-      "courseCode": "JAVA",
-      "courseName": "Java",
-      "fees": 10000 
     },
     {
       "id": 3,
@@ -45,23 +40,31 @@ export class InquiryEntryComponent implements OnInit {
       this.inquiryService.getInquiryById(this.editId).subscribe(
         (data : Inquiry)=>{
           this.inqiry = data;          
+          console.log(data+ "*******");
+          this.inqiry.course = data.course;
+          this.isLoaded = true;
           this.createInquiryEntryForm();
         }
       )
     }else{
+      this.isLoaded = true;
       this.createInquiryEntryForm();
     }    
     
   }
 
-  createInquiryEntryForm(): void{
+  createInquiryEntryForm(): void{    
     this.inquiryEntryForm = this.formBuilder.group({      
-      id : this.formBuilder.control(this.inqiry.id,Validators.required),
-      name : this.formBuilder.control(this.inqiry.name,[Validators.required,Validators.minLength(3)]),
-      email : this.formBuilder.control(this.inqiry.email,[Validators.required,Validators.email]),
-      mobileNo : this.formBuilder.control(this.inqiry.mobileNo,[Validators.required,Validators.maxLength(10),Validators.pattern('^[0-9]+$')]),
-      course : this.formBuilder.control(this.inqiry.course)   
-    });    
+      id : this.formBuilder.control('',Validators.required),
+      name : this.formBuilder.control('',[Validators.required,Validators.minLength(3)]),
+      email : this.formBuilder.control('',[Validators.required,Validators.email]),
+      mobileNo : this.formBuilder.control('',[Validators.required,Validators.maxLength(10),Validators.pattern('^[0-9]+$')]),
+      course: this.formBuilder.control(this.inqiry.course)
+    });        
+    console.log(this.inqiry.course);
+    this.inquiryEntryForm.setValue(this.inqiry);
+    //this.inquiryEntryForm.controls['course'].setValue(this.inqiry.course, {onlySelf: true});
+    this.inquiryEntryForm.controls['course'].patchValue({'course':this.inqiry.course});
   }
 
   save() :void {
