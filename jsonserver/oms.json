@@ -1,0 +1,76 @@
+{
+	"users" : [
+		{
+			"id" : 1,
+			"name" : "keyur",
+			"userName" : "keyur27",
+			"password" : "India@27",
+			"token" : "keyurjava27",
+			"role" : "ADMIN"	
+		},
+		{
+			"id" : 2,
+			"name" : "denish",
+			"userName" : "denish26",
+			"password" : "Bharat@26",
+			"token" : "denishjava26",
+			"role" : "USER"	
+		}
+	],	
+	"items":[
+		{
+			"id":1,
+			"code":"POHE",
+			"name":"Kanda Pohe",
+			"price":20			
+		},
+		{
+			"id":2,
+			"code":"IDL",
+			"name":"Idali",
+			"price":20			
+		},
+		{
+			"id":3,
+			"code":"MVD",
+			"name":"Mendu Vada",
+			"price":30			
+		},
+		{
+			"id":4,
+			"code":"PF",
+			"name":"Veg Puff",
+			"price":15			
+		},
+		{
+			"id":5,
+			"code":"TEA",
+			"name":"Ginger Tea",
+			"price":12			
+		},
+		{
+			"id":6,
+			"code":"COFFEE",
+			"name":"Hot Coffee",
+			"price":20			
+		}			
+	],
+	"orders": [
+		{
+			"id" : 1,
+			"orderItems" : [
+				{
+					"id" : 1,
+					"qty" : 2,
+					"price" : 40	
+				},
+				{
+					"id" : 5,
+					"qty" : 2,
+					"price" : 24	
+				}
+			],
+			"price" : 64		
+		}		
+	]
+}

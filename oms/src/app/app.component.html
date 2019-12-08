@@ -1,0 +1,12 @@
+<div class="container p-3">
+  <div class="row">
+    <div class="col">
+      <app-header [loggedIn]="isLoggedIn" [userRole]="userRole"></app-header>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <router-outlet (activate)="checkLogin()"></router-outlet>
+    </div>
+  </div>
+</div>
