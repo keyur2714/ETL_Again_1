@@ -1,1 +1,29 @@
-<p>items works!</p>
+<div class="row" *ngIf="count > 0">
+    <div class="col">
+            Your Cart Items: {{count}}
+    </div>   
+</div>
+<div class="row">
+    <div class="col" *ngFor="let item of itemList">
+        <div class="card bg-success">
+            <div class="card-header bg-warning">
+                {{item.name}}
+            </div>
+            <div class="card-body">
+                <img src="../../../assets/images/{{item.code}}.jpg" alt="{{item.name}}" width="100px" height="100px">
+            </div>
+            <div class="card-footer">
+                <p>Price - {{item.price}}/-Rs</p>
+                <p>
+                    <select name="qty" #qty class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                    </select>
+                </p>
+                <p><button class="btn btn-info" (click)="addToCart(item.id,item.price,qty.value)">Add to Cart</button></p>
+            </div>
+        </div>
+    </div>
+</div>

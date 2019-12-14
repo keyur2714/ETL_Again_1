@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class AuthenticationService {
 
   isLoggedIn : boolean = false;
+  defaultSuccessPage : string = 'home';
 
   appUrl : string = 'http://localhost:3000/users';
 

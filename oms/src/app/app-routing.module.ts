@@ -7,12 +7,14 @@ import { AdminComponent } from './admin/admin.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignoutComponent } from './signout/signout.component';
 import { ItemsComponent } from './home/items/items.component';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 
 const routes: Routes = [
   {path : 'home' , component : HomeComponent,
+    canActivateChild: [AuthGuardService],
     children : [{
-      path : 'items' , component : ItemsComponent
+      path : 'items' , component : ItemsComponent, canActivate : [AuthGuardService]
     }]
   },
   {path : 'aboutus' , component : AboutusComponent},

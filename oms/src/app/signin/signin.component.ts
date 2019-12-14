@@ -34,7 +34,7 @@ export class SigninComponent implements OnInit {
           if(user !== null && user !== undefined){
             sessionStorage.setItem("token",user.token);
             sessionStorage.setItem("user",JSON.stringify(user)),
-            this.router.navigate(['home']);
+            this.router.navigate([this.authenticationService.defaultSuccessPage]);
           }else{
             this.errorMessage = 'Invalid Username or Password';
           }

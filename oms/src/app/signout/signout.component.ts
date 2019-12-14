@@ -13,6 +13,7 @@ export class SignoutComponent implements OnInit {
   ngOnInit() {
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("user");
+    this.authenticationService.defaultSuccessPage = 'home';
     this.authenticationService.isLoggedIn = false;
     this.router.navigate(['signin']);
   }

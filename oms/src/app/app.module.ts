@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { ItemsComponent } from './home/items/items.component';
 import { AuthenticationService } from './auth/authentication.service';
 import { OmsService } from './services/oms.service';
+import { TokenInerceptorService } from './auth/token-inerceptor.service';
 
 @NgModule({
   declarations: [
@@ -33,9 +34,12 @@ import { OmsService } from './services/oms.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [
+  providers: [    
     AuthenticationService,
-    OmsService
+    OmsService,
+    {
+      provide : HTTP_INTERCEPTORS , useClass : TokenInerceptorService,multi : true
+    }
   ],
   bootstrap: [AppComponent]
 })
