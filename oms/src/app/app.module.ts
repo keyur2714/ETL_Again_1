@@ -15,7 +15,17 @@ import { ItemsComponent } from './home/items/items.component';
 import { AuthenticationService } from './auth/authentication.service';
 import { OmsService } from './services/oms.service';
 import { TokenInerceptorService } from './auth/token-inerceptor.service';
-
+import { ManageOrdersComponent } from './admin/manage-orders/manage-orders.component';
+import { OrderService } from './services/order.service';
+import { OrderDetailComponent } from './admin/order-detail/order-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,20 +36,34 @@ import { TokenInerceptorService } from './auth/token-inerceptor.service';
     SigninComponent,
     SignoutComponent,
     HeaderComponent,
-    ItemsComponent
+    ItemsComponent,
+    ManageOrdersComponent,
+    OrderDetailComponent
+  ],
+  entryComponents : [
+    OrderDetailComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatDialogModule
   ],
   providers: [    
     AuthenticationService,
     OmsService,
     {
       provide : HTTP_INTERCEPTORS , useClass : TokenInerceptorService,multi : true
-    }
+    },
+    OrderService
   ],
   bootstrap: [AppComponent]
 })

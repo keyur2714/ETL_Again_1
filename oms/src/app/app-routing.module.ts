@@ -8,6 +8,8 @@ import { SigninComponent } from './signin/signin.component';
 import { SignoutComponent } from './signout/signout.component';
 import { ItemsComponent } from './home/items/items.component';
 import { AuthGuardService } from './auth/auth-guard.service';
+import { OrderDetailComponent } from './admin/order-detail/order-detail.component';
+import { ManageOrdersComponent } from './admin/manage-orders/manage-orders.component';
 
 
 const routes: Routes = [
@@ -19,7 +21,14 @@ const routes: Routes = [
   },
   {path : 'aboutus' , component : AboutusComponent},
   {path : 'contactus' , component : ContactusComponent},
-  {path : 'admin' , component : AdminComponent},
+  {path : 'admin' , component : AdminComponent,
+    children : [
+      {
+        path:'manage-orders' , component : ManageOrdersComponent
+      }
+    ]
+  },
+  {path : 'orderDetail/:id' , component : OrderDetailComponent},
   {path : 'signin' , component : SigninComponent},
   {path : 'signout' , component : SignoutComponent}
 ];

@@ -1,0 +1,43 @@
+<div class="card">
+    <div class="card-header bg-warning">
+        Your Order Details. 
+    </div>
+    <div class="card-body">        
+        <table class="table table-bordered bg-dark text-info">
+            <thead>
+                <tr>
+                    <th>Oder Id</th>
+                    <td colspan="3">{{order.id}}</td>
+                </tr>
+                <tr>
+                    <th>Sr No.</th>
+                    <th>Item</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let orderItem of order.orderItems;let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{orderItem.id}}</td>
+                    <td>{{orderItem.qty}}</td>
+                    <td>{{orderItem.price}}</td>
+                    <td>{{orderItem.price*orderItem.qty}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Final Price</td>
+                    <td>{{order.price}}</td>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                        <button class="btn btn-info" (click)="back()">Back</button>
+                    </td>
+                </tr>
+            </tbody>                        
+        </table>        
+    </div>
+</div>

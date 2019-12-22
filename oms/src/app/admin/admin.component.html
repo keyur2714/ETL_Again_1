@@ -1,1 +1,10 @@
-<p>admin works!</p>
+<div class="row form-group">
+    <div class="col-sm-2">
+        <button mat-raised-button color="primary" [routerLink]="'manage-orders'">Manage Orders</button>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col">
+        <router-outlet></router-outlet>
+    </div>
+</div>

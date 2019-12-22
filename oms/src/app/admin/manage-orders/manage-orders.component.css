@@ -1,0 +1,19 @@
+/* Structure */
+table {
+    width: 100%;
+}
+  
+.mat-form-field {
+    background: purple;
+    color: white;
+    font-size: 14px;
+    width: 100%;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+td, th {
+    width: 25%;
+}
