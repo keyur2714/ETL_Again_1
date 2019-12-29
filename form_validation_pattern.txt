@@ -1,0 +1,11 @@
+<input [formControl]="username" pattern="^[a-z0-9_-]{8,15}$"> 
+
+unamePattern = "^[a-z0-9_-]{8,15}$"; 
+
+<input [formControl]="username" [pattern]="unamePattern"> 
+
+<div *ngIf="username.errors?.pattern">
+     User name not valid.
+</div> 
+
+<input type=text class="form-control" name=mobileNo [(ngModel)]="newInquiry.mobileNo" required minlength="10" maxlength="10" #mobileNo=ngModel pattern="^[0-9]+$"/>
